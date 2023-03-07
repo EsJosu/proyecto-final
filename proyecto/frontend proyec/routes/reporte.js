@@ -10,13 +10,16 @@ axios.get('http://localhost:3000/reporte')
       };
       datos.push(objeto);
     });
-
+    var $arrColors = ['#34495E','#581845','#666']
     new Morris.Bar({
       element: 'grafico',
       data: datos,
       xkey: 'nombre',
       ykeys: ['vendidos'],
-      labels: ['Vendidos']
+      labels: ['Vendidos'],
+      barColors: function (row,series,type){
+        return $arrColors[row.x];
+      }
     });
   })
   .catch(error => console.error(error));

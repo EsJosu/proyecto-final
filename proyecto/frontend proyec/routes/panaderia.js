@@ -9,7 +9,7 @@ sql1 = 'SELECT COUNT(*) FROM productos WHERE Id_cat="2";' //
 
 const Carga_Datos = (datos) => {
 
-    for(let i=0; i < cantidad_cat; i++){
+    for(let i=0; i < datos.length; i++){
         resultado += `
         <div class="col mb-4">
         <div class="card" style="width: 18rem;color: aliceblue; background-color: rgb(236, 143, 20);">
